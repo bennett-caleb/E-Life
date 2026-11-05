@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b7e1e8">
+  <meta name="description" content="A life simulator about the choices, surprises, and people that shape a life.">
+  <title>E-Life — A life, in progress</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="wordmark" href="#top" aria-label="E-Life home"><span class="mark">E</span><span>E-LIFE</span></a>
+    <span class="edition">A LIFE SIMULATOR <span class="edition-dot"></span> E-LIFE</span>
+    <button class="text-button" id="restartBtn" type="button" hidden>Start over <span aria-hidden="true">↗</span></button>
+  </header>
+
+  <main id="top">
+    <section class="setup" id="setupScreen" aria-labelledby="setupTitle">
+      <div class="setup-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> EVERY LIFE STARTS SOMEWHERE</p>
+        <h1 id="setupTitle">You get<br>one wild life<span class="period">.</span></h1>
+        <p class="setup-lede">A whole story, one birthday at a time.</p>
+        <div class="setup-stamp" aria-hidden="true"><span>ONE LIFE</span><span>NO SCRIPT</span><span>YOUR MOVE</span></div>
+        <img class="world-art" src="assets/life-world.svg" alt="An illustrated neighborhood, family home, little dog, and bus under a sunny sky">
+      </div>
+      <form class="setup-form" id="createForm">
+        <p class="eyebrow">A BRAND NEW SAVE</p>
+        <div class="birth-card" aria-hidden="true">
+          <span class="birth-die">✳</span>
+          <span class="birth-copy"><strong>The beginning</strong><small>2026 · Somewhere on Earth</small></span>
+          <span class="birth-star">✦</span>
+        </div>
+        <button class="primary-button start-button" id="bornBtn" type="submit">Be born <span aria-hidden="true">→</span></button>
+        <p class="form-note">No rerolls. Make this one count.</p>
+      </form>
+    </section>
+
+    <section class="game" id="gameScreen" hidden aria-live="polite">
+      <div class="life-heading">
+        <div class="avatar-stage"><span class="avatar-spark avatar-spark-one">✦</span><span class="avatar-spark avatar-spark-two">✳</span><span class="avatar-emoji" id="avatarEmoji" aria-hidden="true">👶</span></div>
+        <div class="identity-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE LIFE OF</p>
+          <h1 id="lifeTitle">A new life</h1>
+          <p class="life-subtitle" id="lifeSubtitle"></p>
+          <div class="identity-tags"><span id="genderTag"></span><span id="birthplaceTag"></span></div>
+        </div>
+        <div class="age-seal"><span class="age-label">AGE</span><span class="age-number" id="ageNumber">0</span><span class="age-stage" id="ageStage">NEWBORN</span></div>
+      </div>
+
+      <div class="life-strip" aria-label="Life details">
+        <span><small>YEAR</small><strong id="yearValue">2026</strong></span>
+        <span><small>HOME</small><strong id="homeValue">Somewhere</strong></span>
+        <span><small>CAREER</small><strong id="workValue">Growing up</strong></span>
+        <span><small>OUTFIT</small><strong id="outfitValue">Comfy onesie</strong></span>
+        <span class="wallet-chip"><small>POCKET MONEY</small><strong id="cashValue">$0</strong></span>
+      </div>
+
+      <div class="life-grid">
+        <div class="main-column">
+          <section class="choices section-block" aria-labelledby="choicesTitle">
+            <div class="section-heading choices-heading">
+              <div><p class="eyebrow">YOUR NEXT MOVE</p><h2 id="choicesTitle">Choose what to do</h2></div>
+              <span class="action-counter">NO TURN LIMIT</span>
+            </div>
+            <div class="action-filters" id="actionFilters" role="toolbar" aria-label="Activity categories">
+              <button class="filter-button is-selected" type="button" data-filter="everyday" aria-pressed="true">Daily</button>
+              <button class="filter-button" type="button" data-filter="school" aria-pressed="false">School</button>
+              <button class="filter-button" type="button" data-filter="family" aria-pressed="false">Family</button>
+              <button class="filter-button" type="button" data-filter="work" aria-pressed="false">Jobs</button>
+              <button class="filter-button" type="button" data-filter="activities" aria-pressed="false">Activities</button>
+              <button class="filter-button" type="button" data-filter="life" aria-pressed="false">Life</button>
+              <button class="filter-button" type="button" data-filter="style" aria-pressed="false">Style</button>
+              <button class="filter-button" type="button" data-filter="health" aria-pressed="false">Health</button>
+              <button class="filter-button" type="button" data-filter="all" aria-pressed="false">All</button>
+            </div>
+            <div class="action-grid" id="actionGrid"></div>
+            <div class="year-end">
+              <div><p class="eyebrow">READY FOR YOUR BIRTHDAY?</p><p>Time only moves when you say so.</p></div>
+              <button class="primary-button age-up-button" id="nextYearBtn" type="button">Age up <span aria-hidden="true">→</span></button>
+            </div>
+          </section>
+
+          <section class="latest section-block" aria-labelledby="latestTitle">
+            <div class="section-heading"><div><p class="eyebrow">YOUR STORY SO FAR</p><h2 id="latestTitle">Life story</h2></div></div>
+            <ol class="story-list" id="storyList"></ol>
+          </section>
+        </div>
+
+        <aside class="side-column">
+          <section class="wellbeing section-block" aria-labelledby="wellbeingTitle">
+            <div class="section-heading">
+              <div><p class="eyebrow">CHARACTER</p><h2 id="wellbeingTitle">How you're doing</h2></div>
+            </div>
+            <div class="stat-grid" id="statGrid"></div>
+            <div class="health-status" id="healthStatus"></div>
+          </section>
+          <section class="people section-block" aria-labelledby="peopleTitle">
+            <div class="section-heading"><div><p class="eyebrow">YOUR ORBIT</p><h2 id="peopleTitle">Your people</h2></div></div>
+            <div class="family-roster" id="familyRoster"></div>
+            <div id="relationshipList"></div>
+          </section>
+          <section class="pets section-block" aria-labelledby="petsTitle">
+            <div class="section-heading"><div><p class="eyebrow">LITTLE PAWS, BIG PERSONALITIES</p><h2 id="petsTitle">Pets</h2></div></div>
+            <div class="pet-list" id="petList"></div>
+          </section>
+          <section class="wardrobe section-block" aria-labelledby="wardrobeTitle">
+            <div class="section-heading"><div><p class="eyebrow">YOUR LOOKS</p><h2 id="wardrobeTitle">Closet</h2></div></div>
+            <div class="wardrobe-list" id="wardrobeList"></div>
+          </section>
+          <section class="possessions section-block" aria-labelledby="possessionsTitle">
+            <div class="section-heading"><div><p class="eyebrow">THINGS YOU'VE PICKED UP</p><h2 id="possessionsTitle">Your stuff</h2></div></div>
+            <div class="possession-list" id="possessionList"></div>
+          </section>
+          <section class="garage section-block" aria-labelledby="garageTitle">
+            <div class="section-heading"><div><p class="eyebrow">YOUR FOUR-WHEEL STORIES</p><h2 id="garageTitle">The garage</h2></div></div>
+            <img class="garage-art" src="assets/garage-scene.svg" alt="A coral compact car parked outside a neighborhood garage">
+            <div class="garage-list" id="carList"></div>
+          </section>
+          <section class="milestones section-block" aria-labelledby="milestonesTitle">
+            <div class="section-heading"><div><p class="eyebrow">LITTLE, THEN NOT</p><h2 id="milestonesTitle">Milestones</h2></div></div>
+            <ul class="milestone-list" id="milestoneList"></ul>
+          </section>
+        </aside>
+      </div>
+      <footer class="game-footer"><span>E-LIFE / <span id="footerName"></span></span><span>THE ONLY WAY OUT IS THROUGH.</span></footer>
+    </section>
+  </main>
+
+  <dialog class="event-dialog" id="eventDialog" aria-labelledby="eventTitle">
+    <div class="dialog-topline"><span class="eyebrow"><span class="eyebrow-line"></span> A MOMENT THAT MATTERS</span><button class="icon-button" id="closeDialogBtn" type="button" aria-label="Skip this event">×</button></div>
+    <p class="dialog-year" id="dialogYear"></p>
+    <h2 id="eventTitle"></h2>
+    <p class="event-copy" id="eventCopy"></p>
+    <div class="event-choices" id="eventChoices"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

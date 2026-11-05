@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" role="img" aria-labelledby="title description">
+  <title id="title">A life begins</title>
+  <desc id="description">A bright illustrated neighborhood with a family home, a city bus, a little dog, and a newborn under a sunny sky.</desc>
+  <defs>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.4" fill="#275542" opacity=".17"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="520" rx="34" fill="#b9e2e4"/>
+  <rect width="960" height="520" rx="34" fill="url(#dots)"/>
+  <circle cx="782" cy="92" r="49" fill="#ffcf58" stroke="#263541" stroke-width="7"/>
+  <path d="M0 353c138-82 270-78 404-4 132 73 247 63 556-19v190H0z" fill="#8fc979"/>
+  <path d="M0 422c217-82 410-56 570 1 126 44 259 22 390-23v120H0z" fill="#69ad66"/>
+  <path d="m115 273 116-91 119 91v144H115z" fill="#f1b786" stroke="#263541" stroke-width="8" stroke-linejoin="round"/>
+  <path d="m91 280 140-113 145 113-21 24-124-95-119 95z" fill="#ee6953" stroke="#263541" stroke-width="8" stroke-linejoin="round"/>
+  <rect x="148" y="301" width="58" height="61" rx="5" fill="#b9e2e4" stroke="#263541" stroke-width="7"/>
+  <path d="M177 302v59m-28-30h57" stroke="#263541" stroke-width="5"/>
+  <rect x="242" y="310" width="61" height="107" rx="7" fill="#ffcf58" stroke="#263541" stroke-width="7"/>
+  <circle cx="286" cy="368" r="4" fill="#263541"/>
+  <path d="M389 397c39-46 91-61 154-55" fill="none" stroke="#fff8e9" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 22"/>
+  <g transform="translate(514 268)">
+    <rect x="0" y="22" width="287" height="126" rx="26" fill="#ffcf58" stroke="#263541" stroke-width="8"/>
+    <path d="M31 22h167v57H31z" fill="#b9e2e4" stroke="#263541" stroke-width="7"/>
+    <path d="M201 28h37l35 51h-72z" fill="#a8dce3" stroke="#263541" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M42 97h30m22 0h30m22 0h30m21 0h42" stroke="#ee6953" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="64" cy="151" r="24" fill="#263541"/><circle cx="64" cy="151" r="10" fill="#fff8e9"/>
+    <circle cx="228" cy="151" r="24" fill="#263541"/><circle cx="228" cy="151" r="10" fill="#fff8e9"/>
+  </g>
+  <g transform="translate(700 341)">
+    <path d="M12 49c0-20 15-34 39-34h28c19 0 31 12 36 29l20 11-3 26H12z" fill="#f1b786" stroke="#263541" stroke-width="7" stroke-linejoin="round"/>
+    <path d="m25 22-13-18c-3-6 7-9 14-2l20 15m49 0 12-17c5-6 13 0 8 8L101 28" fill="#f1b786" stroke="#263541" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="47" cy="47" r="4" fill="#263541"/><circle cx="77" cy="47" r="4" fill="#263541"/>
+    <path d="M55 61q8 7 16 0" fill="none" stroke="#263541" stroke-width="4" stroke-linecap="round"/>
+    <path d="M30 79v22m59-22v22" stroke="#263541" stroke-width="9" stroke-linecap="round"/>
+    <circle cx="33" cy="103" r="7" fill="#ee6953"/><circle cx="86" cy="103" r="7" fill="#ee6953"/>
+  </g>
+  <g transform="translate(416 315)">
+    <ellipse cx="39" cy="87" rx="37" ry="15" fill="#275542" opacity=".16"/>
+    <path d="M13 53c0-27 12-43 32-43s34 17 34 43v36H13z" fill="#ee6953" stroke="#263541" stroke-width="7"/>
+    <circle cx="46" cy="39" r="30" fill="#f3c7a0" stroke="#263541" stroke-width="7"/>
+    <path d="M19 38c-2-24 11-39 31-39 19 0 30 13 27 34-12-3-20-12-25-20-6 12-18 20-33 25z" fill="#352b28" stroke="#263541" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="37" cy="40" r="3" fill="#263541"/><circle cx="56" cy="40" r="3" fill="#263541"/>
+    <path d="M39 52q8 7 15 0" fill="none" stroke="#263541" stroke-width="4" stroke-linecap="round"/>
+    <path d="M23 80v25m45-25v25" stroke="#263541" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <path d="M442 260v-34m-18 17h36m268 59-10-12m21 0-10 12" stroke="#ee6953" stroke-width="7" stroke-linecap="round"/>
+  <path d="M51 210c24-24 48-24 72 0m-60-22c16-16 32-16 48 0" fill="none" stroke="#fff8e9" stroke-width="8" stroke-linecap="round"/>
+</svg>
